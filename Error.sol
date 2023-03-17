@@ -17,7 +17,9 @@ contract ErrorHandling {
     function countCheck(uint256 _participants) external {
         require(_participants >= players, "Not enough players to participate!");
         participants = _participants;
-        assert(players > 0); // players should never be zero
+        // let's say some logic that changes players count
+        // Even then players should never be zero
+        assert(players > 0);
     }
 
     // function to check enough participants count using revert with custom error
@@ -26,6 +28,8 @@ contract ErrorHandling {
             revert NotEnoughPlayers(_participants);
         }
         participants = _participants;
-        assert(players > 0); // players should never be zero
+        // let's say some logic that changes players count
+        // Even then players should never be zero
+        assert(players > 0);
     }
 }
